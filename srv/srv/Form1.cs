@@ -18,6 +18,7 @@ namespace srv
         private bool ServerOpen5;
         private bool ServerOpen6;
         static int spnr;
+        private List<spieler> m_spieler = new List<spieler>();
         public Form1()
         {
             InitializeComponent();
@@ -117,6 +118,7 @@ namespace srv
                 spnr++;
                 w1.SendData("O+" + spnr.ToString());
                 ServerOpen1 = true;
+                m_spieler.Add(sp);
 
             }
             catch (Exception ex)
@@ -185,6 +187,11 @@ namespace srv
         private void w1_SendProgress(object sender, AxMSWinsockLib.DMSWinsockControlEvents_SendProgressEvent e)
         {
             MessageBox.Show("w1_SendProgress");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
